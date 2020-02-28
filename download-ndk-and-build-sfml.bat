@@ -23,7 +23,7 @@ wget --directory-prefix %ndk_download_path% https://dl.google.com/android/reposi
 Call :UnZipFile "%ndk_download_path%" "%ndk_download_path%android-ndk-r%latest_ndk_version%-windows-x86_64.zip"
 del %ndk_download_path%%android_zip_name%
 
-build-sfml.bat %ndk_download_path%android-ndk-r%latest_ndk_version%
+build-csfml.bat %ndk_download_path%android-ndk-r%latest_ndk_version%
 
 exit /b
 
