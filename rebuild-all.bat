@@ -4,5 +4,18 @@ set abis=x86 armeabi-v7a
 (for %%a in (%abis%) do ( 
    pushd %~dp0%%a
    start rebuild.bat
+   REM rebuild.bat
    popd
 ))
+pushd "%~dp0"
+ping -n 5 127.0.0.1 > nul
+goto loop
+
+:loop
+if not exist *.tmp goto :next
+    ping -n 5 127.0.0.1 > nul
+goto loop
+:next
+echo Done Building!
+popd
+exit
